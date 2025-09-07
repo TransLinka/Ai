@@ -1,0 +1,134 @@
+{
+  "en": {
+    "transport_query": [
+      "I can help you with transport information. What would you like to know?",
+      "Let me find transport details for you.",
+      "I'm here to help with your travel needs.",
+      "What transport information can I provide?",
+      "I can assist you with bus schedules, routes, and fares."
+    ],
+    "entertainment_request": [
+      "I'd be happy to entertain you! What would you like?",
+      "Let's have some fun! What can I do for you?",
+      "Entertainment time! How can I brighten your day?",
+      "I have jokes, facts, quizzes, and more. What interests you?",
+      "Ready to be entertained? What would you prefer?"
+    ],
+    "support_request": [
+      "I'm here to help. What can I assist you with?",
+      "Let me help you with your question.",
+      "How can I support you today?",
+      "I'm ready to help. What do you need assistance with?",
+      "What can I help you resolve today?"
+    ],
+    "greeting": [
+      "Hello! How can I help you today?",
+      "Hi there! What can I do for you?",
+      "Greetings! I'm here to assist you.",
+      "Welcome! How may I assist you?",
+      "Good day! What can I help you with?"
+    ],
+    "goodbye": [
+      "Goodbye! Have a great day!",
+      "See you later! Take care!",
+      "Farewell! Come back anytime.",
+      "Until next time! Stay safe!",
+      "Bye! Hope I was helpful!"
+    ],
+    "general": [
+      "I understand. Let me help you with that.",
+      "That's interesting. How can I assist?",
+      "I'm here to help. Could you be more specific?",
+      "I can help with transport, entertainment, or support. What do you need?",
+      "Let me know how I can assist you better."
+    ]
+  },
+  "rw": {
+    "transport_query": [
+      "Nshobora kugufasha kubijyanye n'ubwikorezi. Ni iki ushaka kumenya?",
+      "Reka nkushoze amakuru y'ingendo.",
+      "Ndi hano gufasha mu bibazo by'ingendo.",
+      "Ni ayahe makuru y'ubwikorezi nkugera?",
+      "Nshobora kugufasha ku gahunda ya bisi, inzira, n'ikiguzi."
+    ],
+    "entertainment_request": [
+      "Nishimiye kugukeza! Ni iki ushaka?",
+      "Reka twinezeze! Ni iki nkora?",
+      "Igihe cy'kwishimisha! Ni gute nkoresha umunsi wawe?",
+      "Mfite urwenya, amakuru, ibibazo, n'ibindi. Ni iki gishimishije?",
+      "Witeguye kwishimishwa? Ni iki ushaka?"
+    ],
+    "support_request": [
+      "Ndi hano gufasha. Ni iki nkora?",
+      "Reka nkugufashe n'ikibazo cyawe.",
+      "Ni gute nkugufasha uyu munsi?",
+      "Niteguye gufasha. Ni iki ukeneye ubufasha bwacyo?",
+      "Ni iki nkugufashaho gukemura uyu munsi?"
+    ],
+    "greeting": [
+      "Muraho! Ni gute nkugufasha uyu munsi?",
+      "Mwaramutse! Ni iki nkora?",
+      "Amahoro! Ndi hano kugufasha.",
+      "Murakaza neza! Ni gute nkugufasha?",
+      "Umunsi mwiza! Ni iki nkugufashaho?"
+    ],
+    "goodbye": [
+      "Murabeho! Mwumve umunsi mwiza!",
+      "Tuzabonana! Mwicuze!",
+      "Tugire amahoro! Mugaruke ubwoba ubwo.",
+      "Kugeza ubundi buryo! Mwicuze!",
+      "Murabeho! Nizere naguze!"
+    ],
+    "general": [
+      "Ndabyumva. Reka nkugufashe.",
+      "Ni byiza. Ni gute nkugufasha?",
+      "Ndi hano gufasha. Waba ushobora kugereranya?",
+      "Nshobora gufasha mu bwikorezi, kwishimisha, cyangwa ubufasha. Ni iki ukeneye?",
+      "Menyesha uko nkugufasha neza."
+    ]
+  },
+  "fr": {
+    "transport_query": [
+      "Je peux vous aider avec les informations de transport. Que voulez-vous savoir?",
+      "Laissez-moi trouver les détails de transport pour vous.",
+      "Je suis là pour vous aider avec vos besoins de voyage.",
+      "Quelles informations de transport puis-je fournir?",
+      "Je peux vous aider avec les horaires de bus, les itinéraires et les tarifs."
+    ],
+    "entertainment_request": [
+      "Je serais ravi de vous divertir! Que voulez-vous?",
+      "Amusons-nous! Que puis-je faire pour vous?",
+      "C'est l'heure du divertissement! Comment puis-je égayer votre journée?",
+      "J'ai des blagues, des faits, des quiz et plus encore. Qu'est-ce qui vous intéresse?",
+      "Prêt à être diverti? Que préféreriez-vous?"
+    ],
+    "support_request": [
+      "Je suis là pour aider. Avec quoi puis-je vous assister?",
+      "Laissez-moi vous aider avec votre question.",
+      "Comment puis-je vous soutenir aujourd'hui?",
+      "Je suis prêt à aider. De quelle assistance avez-vous besoin?",
+      "Que puis-je vous aider à résoudre aujourd'hui?"
+    ],
+    "greeting": [
+      "Bonjour! Comment puis-je vous aider aujourd'hui?",
+      "Salut! Que puis-je faire pour vous?",
+      "Salutations! Je suis là pour vous assister.",
+      "Bienvenue! Comment puis-je vous aider?",
+      "Bonne journée! Avec quoi puis-je vous aider?"
+    ],
+    "goodbye": [
+      "Au revoir! Passez une excellente journée!",
+      "À plus tard! Prenez soin de vous!",
+      "Adieu! Revenez quand vous voulez.",
+      "À la prochaine! Restez en sécurité!",
+      "Salut! J'espère avoir été utile!"
+    ],
+    "general": [
+      "Je comprends. Laissez-moi vous aider avec ça.",
+      "C'est intéressant. Comment puis-je vous assister?",
+      "Je suis là pour aider. Pourriez-vous être plus précis?",
+      "Je peux aider avec le transport, le divertissement ou le support. De quoi avez-vous besoin?",
+      "Faites-moi savoir comment je peux mieux vous aider."
+    ]
+  }
+}
