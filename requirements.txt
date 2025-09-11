@@ -1,54 +1,54 @@
 # FastAPI and web framework
-fastapi==0.83.0
-uvicorn[standard]==0.16.0
-python-multipart==0.0.5
+fastapi>=0.100.0
+uvicorn[standard]==0.20.0
+python-multipart==0.0.6
 
 # Machine Learning and NLP
-transformers==4.18.0
-torch==2.0.0  # Updated to newer version that's available
+transformers==4.26.0
+torch==2.0.1
 sentence-transformers==2.2.2
-spacy==3.4.4  # Older version to avoid numpy>=2.0.0 requirement
+spacy==3.5.0
+
 scikit-learn==1.2.2
-numpy==1.24.4
+numpy==1.24.3
 pandas==1.5.3
 
 # Language processing
 langdetect==1.0.9
-googletrans==4.0.0rc1  # Updated to more stable version
+googletrans==3.1.0a0  # Downgraded to avoid httpx conflict
 # Removed polyglot due to installation issues
 
 # Database and caching
-redis==4.5.1
-psycopg2-binary==2.9.5
-sqlalchemy==1.4.46
-alembic==1.9.2
+redis==4.5.4
+psycopg2-binary==2.9.6
+sqlalchemy==1.4.48
+alembic==1.9.4
 
 # HTTP client
-httpx==0.23.3
-aiohttp==3.8.3
+aiohttp==3.8.4
 
 # Utilities
 python-dotenv==0.21.1
-pydantic==1.10.4
-pydantic-settings==2.5.2  # Updated to latest compatible version
+pydantic==1.10.7
+# Removed pydantic-settings as it's not compatible with Python 3.11
 
 # Logging and monitoring
-loguru==0.6.0
-prometheus-client==0.15.0
+loguru==0.7.0
+prometheus-client==0.16.0
 
 # Development and testing
-pytest==7.2.0
-pytest-asyncio==0.20.3
-black==22.12.0
+pytest==7.3.1
+pytest-asyncio==0.21.0
+black==23.3.0
 flake8==6.0.0
-mypy==0.991
+mypy==1.2.0
 
 # Additional ML utilities
 joblib==1.2.0
 nltk==3.8.1
 textblob==0.17.1
 fuzzywuzzy==0.18.0
-python-Levenshtein==0.20.9
+python-Levenshtein==0.21.1
 
 # Voice processing
 speechrecognition==3.10.0
@@ -56,4 +56,6 @@ pydub==0.25.1
 
 # Configuration and environment
 pyyaml==6.0
-python-json-logger==2.0.4
+python-json-logger==2.0.7
+
+httpx==0.13.3
