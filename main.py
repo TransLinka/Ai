@@ -22,7 +22,7 @@ from services.response_generator import ResponseGenerator
 from services.translation_service import TranslationService
 from models.chat_models import ChatRequest, ChatResponse, HealthResponse
 from utils.logger import setup_logger
-from utils.cache import CacheManager
+from utils.cache import MLCacheManager
 
 # Global variables for services
 nlp_service: Optional[NLPService] = None
@@ -30,7 +30,7 @@ intent_classifier: Optional[IntentClassifier] = None
 entity_extractor: Optional[EntityExtractor] = None
 response_generator: Optional[ResponseGenerator] = None
 translation_service: Optional[TranslationService] = None
-cache_manager: Optional[CacheManager] = None
+cache_manager: Optional[MLCacheManager] = None
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -44,7 +44,7 @@ async def lifespan(app: FastAPI):
         logger.info("🚀 Starting Translinka ML Service...")
         
         # Initialize cache manager
-        cache_manager = CacheManager(settings.redis_url)
+        cache_manager = MLCacheManager(settings.redis_url)
         await cache_manager.connect()
         logger.info("✅ Cache manager initialized")
         
