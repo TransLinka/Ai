@@ -114,8 +114,11 @@ class ModelInfoResponse(BaseModel):
 
 class RetrainRequest(BaseModel):
     """Request model for model retraining"""
-    model_type: str = Field(..., description="Type of model to retrain (intent, entity)")
+    model_type: str = Field(..., alias="model_type", description="Type of model to retrain (intent, entity)")
     force: bool = Field(False, description="Force retraining even if model is recent")
+
+    class Config:
+        protected_namespaces = ()
 
 
 class RetrainResponse(BaseModel):

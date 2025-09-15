@@ -397,9 +397,19 @@ async def log_chat_analytics(
 ):
     """Log chat analytics for monitoring and improvement"""
     try:
+        # Support both dict- and object-style user payloads
+        user_id = None
+        try:
+            if isinstance(request.user, dict):
+                user_id = request.user.get("id")
+            elif request.user is not None:
+                user_id = getattr(request.user, "id", None)
+        except Exception:
+            user_id = None
+
         analytics_data = {
             "timestamp": datetime.now().isoformat(),
-            "user_id": request.user.get("id") if request.user else None,
+            "user_id": user_id,
             "message_length": len(request.message),
             "intent": intent,
             "confidence": confidence,

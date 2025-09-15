@@ -2,7 +2,7 @@
 Configuration settings for the ML service
 """
 
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import Optional, List, Dict, Any
 import os
 
@@ -125,10 +125,13 @@ class Settings(BaseSettings):
         "analytics_logging": True
     }
     
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-        case_sensitive = False
+    # Pydantic v2 settings configuration
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="ignore"  # Ignore unknown env vars like frontend_url, backend_url
+    )
 
 # Global settings instance
 settings = Settings()

@@ -13,6 +13,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import classification_report, accuracy_score
 from typing import Dict, List, Optional, Any, Tuple
+from functools import partial
 import asyncio
 from datetime import datetime
 import json
@@ -91,10 +92,28 @@ class IntentClassifier:
                     None, joblib.load, vectorizer_path
                 )
                 
-                # Extract intent labels from model
-                if hasattr(self.model, 'classes_'):
+                # Validate loaded artifacts
+                is_valid = True
+                # Model must expose classes_ and have at least one class
+                if not hasattr(self.model, 'classes_') or not getattr(self.model, 'classes_', []):
+                    is_valid = False
+                else:
                     self.intent_labels = list(self.model.classes_)
-                
+                # Vectorizer must be fitted and have vocabulary
+                if not hasattr(self.vectorizer, 'vocabulary_') or not getattr(self.vectorizer, 'vocabulary_', {}):
+                    is_valid = False
+                # Model should support predict_proba (SVC requires probability=True)
+                if not hasattr(self.model, 'predict_proba'):
+                    is_valid = False
+
+                if not is_valid:
+                    ml_logger.warning("Pre-trained intent artifacts are invalid or unfitted; will retrain.")
+                    # Clear loaded artifacts to force training
+                    self.model = None
+                    self.vectorizer = None
+                    self.intent_labels = []
+                    return False
+
                 ml_logger.info(f"Loaded model with {len(self.intent_labels)} intent classes")
                 return True
             
@@ -339,11 +358,16 @@ class IntentClassifier:
         y_pred = self.model.predict(X_test_vec)
         accuracy = accuracy_score(y_test, y_pred)
         
-        # Cross-validation
-        cv_scores = await asyncio.get_event_loop().run_in_executor(
-            None, cross_val_score, self.model, X_train_vec, y_train, 
-            None, self.settings.training_config["intent_classifier"]["cross_validation_folds"]
+        # Cross-validation (use kwargs to match signature in executor)
+        cv_func = partial(
+            cross_val_score,
+            self.model,
+            X_train_vec,
+            y_train,
+            cv=self.settings.training_config["intent_classifier"]["cross_validation_folds"],
+            scoring=None,
         )
+        cv_scores = await asyncio.get_event_loop().run_in_executor(None, cv_func)
         
         duration = (datetime.now() - start_time).total_seconds() * 1000
         
